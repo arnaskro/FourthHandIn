@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -32,6 +33,7 @@ public class Camera extends AppCompatActivity {
     Button btnTakePicture;
     File dirPictures;
     ImageView ivLastImage;
+    TextView txtOrientation, txtLatitude, txtLongtitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,17 @@ public class Camera extends AppCompatActivity {
         // Setup buttons
         setupButtons();
 
+        // Setup text views
+        setupTextViews();
+
         // Setup image view for last image
         ivLastImage = (ImageView) findViewById(R.id.ivLastImage);
+    }
 
+    private void setupTextViews() {
+        txtOrientation = (TextView) findViewById(R.id.txtOr);
+        txtLatitude = (TextView) findViewById(R.id.txtLat);
+        txtLongtitude = (TextView) findViewById(R.id.txtLong);
     }
 
     private void setDirectory() {
@@ -113,6 +123,7 @@ public class Camera extends AppCompatActivity {
         super.onResume();
 
         String filename = loadAttemptFilename();
+        setPicture(filename, ivLastImage);
     }
 
     @Override
@@ -139,11 +150,17 @@ public class Camera extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(filename, bmOptions);
 
         try {
-            ivLastImage.setRotation((new ExifInterface(filename)).getAttributeInt(ExifInterface.TAG_ORIENTATION, -1));
+            ExifInterface exif = new ExifInterface(filename);
+
+            // Set texts
+            txtOrientation.setText("Orientation: " + exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, -1));
+            txtLatitude.setText("Latitude: " + exif.getAttributeDouble(ExifInterface.TAG_GPS_LATITUDE, -1));
+            txtLongtitude.setText("Longtitude: " + exif.getAttributeDouble(ExifInterface.TAG_GPS_LONGITUDE, -1));
+
         } catch (IOException e) {
-            ivLastImage.setRotation(90);
         }
 
+        ivLastImage.setRotation(90);
         ivLastImage.setImageBitmap(bitmap);
     }
 
