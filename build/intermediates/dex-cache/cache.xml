@@ -2,32 +2,193 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-a9292606b4dc4b7acaa059be8425c49869edf603.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\internal_impl-22.2.0-59863ac768becee337af463583b5433ab475091b.jar" />
+    </item>
+    <item
         jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\debug\classes-0fba58a72fc4cc63090193879a43b21c3cd31dea.jar" />
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-0fba58a72fc4cc63090193879a43b21c3cd31dea.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-61507fce1e3b40cc0d0307df4a8b068861c7f98f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-4e1d64b1632acd594e8608c1699b342ff3fb858f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-6ddefc62f5353b6dea8558adf0ccdfe88c965e5d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-1bb9fe5d5a93c49717a5f4ce7f1c59e5bd3a8b9b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-a48e0e4f8bb6a078718ac4b6a4779b30513949a9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-3538e2cf17005527a39aecf91381456722043b89.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-5c3911cbfb8c2a9fd2e604ab798754c74d25bc2f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-713abcaf9b4f9194a63ef70b7c5cafcba16e74a8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-cac6a608f9a34f6ee65a48af4a25f04b4894cf29.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-14b807920b467780fa51194afb542fb87e2ab16a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-b040bccfaf5854d1859560fbd785d3a72dc7d0d6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-9d3450f1da3e5cd100aa57e4519671e5e2232649.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-99571e8c7ade9be7a6e56341481e7ea4be4ea615.jar" />
     </item>
     <item
         jar="C:\Users\Arnas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-86b11761254b6ca81811d0604ef3d799f51c30ca.jar" />
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\support-annotations-23.0.0-86b11761254b6ca81811d0604ef3d799f51c30ca.jar" />
     </item>
     <item
         jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\debug\classes-91aebd4016398eac555435ed9821a6b784de6bfa.jar" />
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-91aebd4016398eac555435ed9821a6b784de6bfa.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-01bfc9a8d8734b2e3b99b9e9e61c452c2b985006.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-559e2af502ceb4b60975c2dc9742eecff49d3a92.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-130193345c585efe3caeedcbdd96c824818bb447.jar" />
     </item>
     <item
         jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-65fab2bc1841440fcc07209515a630a0f3df2b23.jar" />
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\internal_impl-23.0.0-65fab2bc1841440fcc07209515a630a0f3df2b23.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-795e427602b59c5d7af7b208e36eed687151ee0e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-2b9ba22bf33024d1437d1ff4e19da6e0870808df.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-42654bd46a2292f2d537a488797bf816f700b6c1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-3a72f694688e31006412f94f68674af5487f0441.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="C:\Users\Arnas\OneDrive\ANDROID_STUDIO\FourthHandIn\app\build\intermediates\pre-dexed\release\classes-6c2464be01c7a2919a9bab23545f12415f5083d2.jar" />
     </item>
 
 </items>
