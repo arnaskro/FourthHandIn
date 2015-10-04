@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,10 +21,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,8 +85,7 @@ public class Intro extends AppCompatActivity implements
     }
 
     private void setDirectory() {
-        dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        if (dirPictures != null) dirPictures.mkdirs();
+        dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + "Pictures4handIn");
     }
 
 
@@ -178,15 +181,16 @@ public class Intro extends AppCompatActivity implements
             ExifInterface exif = new ExifInterface(filename);
 
             // Set texts
-            txtOrientation.setText("Orientation: \n\t\t" + exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, -1));
+            txtOrientation.setText("Orientation: \n" + exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, -1));
 
             float[] latlong = new float[2];
             if(exif.getLatLong(latlong)){
-                txtLatitude.setText("Latitude:\n\t\t"+latlong[0]);
-                txtLongtitude.setText("Longtitude: \n\t\t"+latlong[1]);
+                txtLatitude.setText("Latitude:\n"+latlong[0]);
+                txtLongtitude.setText("Longtitude: \n"+latlong[1]);
             }
 
         } catch (IOException e) {
+            e.printStackTrace();
         }
 
         ivLastImage.setRotation(90);
@@ -204,18 +208,13 @@ public class Intro extends AppCompatActivity implements
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
+
+        return Environment.MEDIA_MOUNTED.equals(state);
     }
 
     public boolean isExtrenalStorageReadable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
     }
 
     @Override
@@ -244,12 +243,7 @@ public class Intro extends AppCompatActivity implements
     public void onMapReady(GoogleMap googleMap) {
         googleMap.setOnMarkerClickListener(this);
 
-        findImagesWithGeoTagAndAddToGmap(googleMap);
-
-    }
-
-    private void findImagesWithGeoTagAndAddToGmap(GoogleMap googleMap) {
-        // TODO not implemented
+        myFindImagesWithGeoTagAndAddToGmap(googleMap);
     }
 
     @Override
@@ -260,8 +254,87 @@ public class Intro extends AppCompatActivity implements
     @Override
     public boolean onMarkerClick(Marker marker) {
 
-        Toast.makeText(this, "ImageName: "+marker.getTitle(), Toast.LENGTH_LONG).show();;
+        // filename
+        String imgName = marker.getTitle();
+
+        Toast.makeText(this, "ImageName: "+ imgName, Toast.LENGTH_LONG).show();
 
         return true;
     }
+
+    private void myFindImagesWithGeoTagAndAddToGmap(GoogleMap gmap) {
+
+        // Check storage is mounted
+        String storageState = Environment.getExternalStorageState();
+        if (storageState.equals(Environment.MEDIA_MOUNTED)) {
+
+            // Go trough all images and look for ones with geotag
+            if (dirPictures.exists()) {
+                Log.d("ark", "pictures dir exists!");
+                File[] files = dirPictures.listFiles();
+                for (File file : files) {
+                    if (file.getName().endsWith(".jpg")) {
+
+                        // Get position
+                        LatLng pos = getLatLongFromExif(file.getAbsolutePath());
+
+                        // Add geotag to google map if position is not null
+                        if (pos != null) {
+                            addGeoTag(pos, file.getName(), gmap);
+                        }
+                    }
+                }
+            } else {
+                Log.d("ark", "pictures dir doesnt exists!");
+            }
+        }
+    }
+
+    private void addGeoTag(LatLng pos, String filename, GoogleMap gmap) {
+        gmap.setMyLocationEnabled(true);
+        gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 13));
+        gmap.addMarker(new MarkerOptions().position(pos)).setTitle(filename);
+    }
+
+    private LatLng getLatLongFromExif(String filename) {
+        float[] latlong = new float[2];
+        LatLng pos      = null;
+
+        try {
+
+            ExifInterface exif = new ExifInterface(filename);
+            if (exif.getLatLong(latlong)) {
+                pos = new LatLng(latlong[0], latlong[1]);
+            } else {
+                return null;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return pos;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
