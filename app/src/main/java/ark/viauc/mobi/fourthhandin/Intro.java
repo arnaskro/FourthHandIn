@@ -39,6 +39,8 @@ public class Intro extends AppCompatActivity implements
         OnMapReadyCallback,
         View.OnClickListener {
 
+    final static String PICTURES_DIR = "Pictures4handIn";
+    final static String IMAGE_NAME = "IMAGE_NAME";
     final static String CAMERA_PREFS = "CAMERA_PREFS";
     final static String FILENAME = "FILENAME";
     final static int REQUEST_FILE = 100;
@@ -85,7 +87,7 @@ public class Intro extends AppCompatActivity implements
     }
 
     private void setDirectory() {
-        dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + "Pictures4handIn");
+        dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + PICTURES_DIR);
     }
 
 
@@ -256,8 +258,11 @@ public class Intro extends AppCompatActivity implements
 
         // filename
         String imgName = marker.getTitle();
+        Intent inAbout = new Intent(Intro.this, ImageDetails.class);
+        inAbout.putExtra(IMAGE_NAME, imgName);
 
-        Toast.makeText(this, "ImageName: "+ imgName, Toast.LENGTH_LONG).show();
+        // Launch intent
+        startActivity(inAbout);
 
         return true;
     }

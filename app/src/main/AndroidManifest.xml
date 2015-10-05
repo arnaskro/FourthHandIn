@@ -17,7 +17,8 @@
         <activity
             android:name=".Intro"
             android:exported="true"
-            android:label="@string/title_activity_intro" >
+            android:label="@string/title_activity_intro"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA5NusO-KRUYof13jL4xi_P_YrPrDNK6AY" />
 
-        <activity android:name=".ImageDetails" >
+        <activity
+            android:name=".ImageDetails"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
