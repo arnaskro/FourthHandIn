@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -43,6 +44,7 @@ public class Intro extends AppCompatActivity implements
     final static String IMAGE_NAME = "IMAGE_NAME";
     final static String CAMERA_PREFS = "CAMERA_PREFS";
     final static String FILENAME = "FILENAME";
+    public static final String LAST_PICTURE_TIME = "LAST PICTURE TIME";
     final static int REQUEST_FILE = 100;
     final static int RESULT_TRUE = -1;
     final static int RESULT_FALSE = 0;
@@ -131,6 +133,9 @@ public class Intro extends AppCompatActivity implements
         SharedPreferences prefs = getSharedPreferences(CAMERA_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
         edit.putString(FILENAME, filename);
+        DateFormat df = new SimpleDateFormat("HH:mm:ss");
+        String timeText = df.format(new Date());
+        edit.putString(LAST_PICTURE_TIME, timeText);
         edit.apply();
     }
 
