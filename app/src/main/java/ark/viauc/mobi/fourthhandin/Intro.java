@@ -88,6 +88,7 @@ public class Intro extends AppCompatActivity implements
 
     private void setDirectory() {
         dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + PICTURES_DIR);
+        dirPictures.mkdirs();
     }
 
 
