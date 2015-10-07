@@ -51,7 +51,6 @@ public class DeletePictures extends Service {
             while (newTime - currentTime < 100) {
                 newTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
             }
-            Log.d("ark", "time to delete files");
             return currentTime;
         }
 
@@ -62,7 +61,6 @@ public class DeletePictures extends Service {
     }
 
     private void deleteImages(Long time) {
-        Log.d("ark", "Cia::::::" + deletePictureTime);
 
         Intent intent = new Intent(ServiceActivity.BROADCAST_CURRENTTIME);
         File dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + Intro.PICTURES_DIR);

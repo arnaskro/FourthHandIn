@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ServiceActivity extends AppCompatActivity {
 
@@ -77,6 +78,8 @@ public class ServiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 time = (String) spinner.getSelectedItem();
                 myStartService(time);
+
+                Toast.makeText(ServiceActivity.this, "Service started", Toast.LENGTH_SHORT).show();
 
             }
         });

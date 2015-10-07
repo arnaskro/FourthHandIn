@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.ExifInterface;
+import android.media.Image;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -103,7 +104,7 @@ public class ImageDetails extends AppCompatActivity {
             public void onClick(View v) {
                 saveNotes();
 
-                // TODO do something after a button was clicked?
+                Toast.makeText(ImageDetails.this, "Notes saved!", Toast.LENGTH_SHORT).show();
             }
         });
 
