@@ -51,7 +51,7 @@ public class Intro extends AppCompatActivity implements
 
     private GoogleMap gmap;
 
-    Button btnTakePicture;
+    Button btnTakePicture, btnService;
     File dirPictures;
     ImageView ivLastImage;
     TextView txtOrientation, txtLatitude, txtLongtitude;
@@ -103,6 +103,17 @@ public class Intro extends AppCompatActivity implements
     }
 
     private void setupButtons() {
+        btnService = (Button) findViewById(R.id.btnSettings);
+        btnService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentService = new Intent(Intro.this, ServiceActivity.class);
+                startActivity(intentService);
+
+            }
+        });
+
         btnTakePicture = (Button) findViewById(R.id.btnTakePicutre);
         btnTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +151,7 @@ public class Intro extends AppCompatActivity implements
     }
 
     private String loadAttemptFilename() {
-        String timestamp = new SimpleDateFormat("yyyMMdd_HHmmss").format(new Date());
+        String timestamp = new SimpleDateFormat("yyyMMddHHmmss").format(new Date());
         String otherFilename = dirPictures.getPath() + File.separator + "IMG_" + timestamp + ".jpg";
 
         SharedPreferences prefs = getSharedPreferences(CAMERA_PREFS, MODE_PRIVATE);
