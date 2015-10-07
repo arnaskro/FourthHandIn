@@ -50,6 +50,11 @@
 
         <activity android:name=".ServiceActivity" >
         </activity>
+
+        <service
+            android:name=".DeletePictures"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
