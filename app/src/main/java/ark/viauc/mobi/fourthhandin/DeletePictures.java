@@ -17,12 +17,15 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 
 public class DeletePictures extends Service {
+    private long deletePictureTime;
+
     public DeletePictures() {
 
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        deletePictureTime = intent.getIntExtra("TIME", 10000);
         new GetCurrentTimeAndDeleteOldPictures().execute();
 
         return START_NOT_STICKY;
@@ -45,11 +48,9 @@ public class DeletePictures extends Service {
         @Override
         protected Long doInBackground(Integer... params) {
             long newTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
-
-            while (newTime-currentTime < 30) {
+            while (newTime - currentTime < 100) {
                 newTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
             }
-
             Log.d("ark", "time to delete files");
             return currentTime;
         }
@@ -60,10 +61,10 @@ public class DeletePictures extends Service {
         }
     }
 
-    private void deleteImages (Long time) {
+    private void deleteImages(Long time) {
+        Log.d("ark", "Cia::::::" + deletePictureTime);
+
         Intent intent = new Intent(ServiceActivity.BROADCAST_CURRENTTIME);
-
-
         File dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + Intro.PICTURES_DIR);
         // find pictures
         String storageState = Environment.getExternalStorageState();
@@ -81,7 +82,7 @@ public class DeletePictures extends Service {
 
                         Long imgTime = parseLong(imgName);
 
-                        if (imgTime < time)
+                        if (time - imgTime > deletePictureTime)
                             file.delete();
 
                     }

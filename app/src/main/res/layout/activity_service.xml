@@ -14,9 +14,8 @@
         android:layout_height="wrap_content"
         android:text="Go back"
         android:id="@+id/btnBack"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/btnStartService"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,6 +24,29 @@
         android:id="@+id/btnStartService"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose time how old images should be deleted:"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:id="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingBottom="5dp"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/time_picker"
+        android:entries="@array/options_time"
+        android:prompt="@string/options_time_prompt"
+        android:textColor="#FFFFFF"
+        android:spinnerMode="dialog"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:focusable="false"
+        android:background="#ffffff" />
 
 
 </RelativeLayout>

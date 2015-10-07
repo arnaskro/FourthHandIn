@@ -10,17 +10,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 
 public class ServiceActivity extends AppCompatActivity {
 
     Button btnBack, btnStartService;
     public final static String BROADCAST_CURRENTTIME = "BROADCAST_CURRENTTIME";
     public final static String UPDATED_TIME = "UPDATED_TIME";
+    private Spinner spinner;
+    private String time;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-                myStartService();
+                myStartService(time);
         }
     };
 
@@ -34,8 +37,25 @@ public class ServiceActivity extends AppCompatActivity {
 
     }
 
-    private void myStartService() {
+    private void myStartService(String time) {
         Intent intent = new Intent(ServiceActivity.this, DeletePictures.class);
+        switch(time) {
+            case "5 minutes":
+                intent.putExtra("TIME", 500);
+                break;
+            case "30 minutes":
+                intent.putExtra("TIME", 3000);
+                break;
+            case "1 hour":
+                intent.putExtra("TIME", 10000);
+                break;
+            case "24 hours":
+                intent.putExtra("TIME", 240000);
+                break;
+            default:
+                intent.putExtra("TIME", 10000);
+                break;
+        }
         startService(intent);
     }
 
@@ -49,11 +69,14 @@ public class ServiceActivity extends AppCompatActivity {
         });
 
         btnStartService = (Button) findViewById(R.id.btnStartService);
+
+        spinner = (Spinner) findViewById(R.id.time_picker);
+
         btnStartService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                myStartService();
+                time = (String) spinner.getSelectedItem();
+                myStartService(time);
 
             }
         });
