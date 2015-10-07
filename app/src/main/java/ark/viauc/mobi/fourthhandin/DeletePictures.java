@@ -3,13 +3,18 @@ package ark.viauc.mobi.fourthhandin;
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static java.lang.Integer.parseInt;
+import static java.lang.Long.parseLong;
 
 public class DeletePictures extends Service {
     public DeletePictures() {
@@ -19,7 +24,7 @@ public class DeletePictures extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         new GetCurrentTimeAndDeleteOldPictures().execute();
-        stopSelf();
+
         return START_NOT_STICKY;
     }
 
@@ -28,27 +33,65 @@ public class DeletePictures extends Service {
         return null;
     }
 
-    private class GetCurrentTimeAndDeleteOldPictures extends AsyncTask<Integer, Void, String> {
+    private class GetCurrentTimeAndDeleteOldPictures extends AsyncTask<Integer, Void, Long> {
+
+        long currentTime;
 
         @Override
         protected void onPreExecute() {
+            currentTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
         }
 
         @Override
-        protected String doInBackground(Integer... params) {
-            return new SimpleDateFormat("yyyMMddHHmmss").format(new Date());
+        protected Long doInBackground(Integer... params) {
+            long newTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
+
+            while (newTime-currentTime < 30) {
+                newTime = parseLong(new SimpleDateFormat("yyyMMddHHmmss").format(new Date()));
+            }
+
+            Log.d("ark", "time to delete files");
+            return currentTime;
         }
 
         @Override
-        protected void onPostExecute(String time) {
-            Log.d("ark", "time: " + time);
-            publishTime(time);
+        protected void onPostExecute(Long time) {
+            deleteImages(time);
         }
     }
 
-    private void publishTime (String time) {
+    private void deleteImages (Long time) {
         Intent intent = new Intent(ServiceActivity.BROADCAST_CURRENTTIME);
-        intent.putExtra(ServiceActivity.UPDATED_TIME, time);
+
+
+        File dirPictures = getExternalFilesDir(Environment.DIRECTORY_PICTURES + File.separator + Intro.PICTURES_DIR);
+        // find pictures
+        String storageState = Environment.getExternalStorageState();
+        if (storageState.equals(Environment.MEDIA_MOUNTED)) {
+
+            // Go trough all images and look for ones with geotag
+            if (dirPictures.exists()) {
+                File[] files = dirPictures.listFiles();
+                for (File file : files) {
+                    if (file.getName().endsWith(".jpg")) {
+
+                        String imgName = file.getName().replace(".jpg", "");
+                        imgName = imgName.replace("_", "");
+                        imgName = imgName.replace("IMG", "");
+
+                        Long imgTime = parseLong(imgName);
+
+                        if (imgTime < time)
+                            file.delete();
+
+                    }
+                }
+            } else {
+                Log.d("ark", "pictures dir doesnt exists!");
+            }
+        }
+
+
         sendBroadcast(intent);
     }
 }

@@ -1,5 +1,6 @@
 package ark.viauc.mobi.fourthhandin;
 
+import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,21 +13,14 @@ import android.widget.Button;
 
 public class ServiceActivity extends AppCompatActivity {
 
-    Button btnBack, btnUpdate;
-
+    Button btnBack, btnStartService;
     public final static String BROADCAST_CURRENTTIME = "BROADCAST_CURRENTTIME";
     public final static String UPDATED_TIME = "UPDATED_TIME";
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Bundle bundle = intent.getExtras();
-            if (bundle!=null) {
-                String currentTime = bundle.getString(UPDATED_TIME);
-
-                    Log.d("ark", "Updated time: " + currentTime);
-
-            }
+                myStartService();
         }
     };
 
@@ -40,6 +34,11 @@ public class ServiceActivity extends AppCompatActivity {
 
     }
 
+    private void myStartService() {
+        Intent intent = new Intent(ServiceActivity.this, DeletePictures.class);
+        startService(intent);
+    }
+
     public void setupButtons() {
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +48,13 @@ public class ServiceActivity extends AppCompatActivity {
             }
         });
 
-        btnUpdate = (Button) findViewById(R.id.btnUpdate);
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
+        btnStartService = (Button) findViewById(R.id.btnStartService);
+        btnStartService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent updateIntent = new Intent(ServiceActivity.this, DeletePictures.class);
-                ServiceActivity.this.startService(updateIntent);
+
+                myStartService();
+
             }
         });
     }

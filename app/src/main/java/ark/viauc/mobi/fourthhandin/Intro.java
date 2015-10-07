@@ -292,7 +292,6 @@ public class Intro extends AppCompatActivity implements
 
             // Go trough all images and look for ones with geotag
             if (dirPictures.exists()) {
-                Log.d("ark", "pictures dir exists!");
                 File[] files = dirPictures.listFiles();
                 for (File file : files) {
                     if (file.getName().endsWith(".jpg")) {
