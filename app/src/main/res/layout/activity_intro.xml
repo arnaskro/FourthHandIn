@@ -11,11 +11,18 @@
         android:layout_height="wrap_content"
         android:text="Take picture"
         android:id="@+id/btnTakePicutre"
-        android:layout_row="0"
-        android:layout_column="0"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btnSettings"
+        android:layout_toLeftOf="@+id/btnSettings" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service"
+        android:id="@+id/btnSettings"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -27,8 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/abc_action_bar_title_item"
-        android:layout_row="19"
-        android:layout_column="0"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -40,8 +45,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Longtitude:\n0.00000"
         android:id="@+id/txtLong"
-        android:layout_row="3"
-        android:layout_column="0"
         android:textColor="#fff"
         android:layout_below="@+id/txtLat"
         android:layout_alignParentLeft="true"
@@ -53,12 +56,11 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Latitude:\n0.00000"
         android:id="@+id/txtLat"
-        android:layout_row="2"
-        android:layout_column="0"
         android:textColor="#fff"
         android:layout_below="@+id/txtOr"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,8 +68,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Orientation: \n6"
         android:id="@+id/txtOr"
-        android:layout_row="1"
-        android:layout_column="0"
         android:textColor="#fff"
         android:layout_below="@+id/btnTakePicutre"
         android:layout_alignParentLeft="true"
@@ -80,12 +80,8 @@
         android:id="@+id/ivLastImage"
         android:minHeight="200dp"
         android:minWidth="100dp"
-        android:nestedScrollingEnabled="false"
         android:layout_gravity="top|center"
-        android:layout_row="0"
-        android:layout_column="1"
         android:visibility="visible"
-        android:layout_rowSpan="4"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/btnTakePicutre" />
@@ -101,5 +97,7 @@
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:textColor="#fff" />
+
+
 
 </RelativeLayout>

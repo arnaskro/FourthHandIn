@@ -18,7 +18,7 @@
             android:name=".Intro"
             android:exported="true"
             android:label="@string/title_activity_intro"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,16 +35,21 @@
 
         <activity
             android:name=".ImageDetails"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
-        <receiver android:name=".Widget_class">
+
+        <receiver android:name=".Widget_class" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_xml" />
         </receiver>
+
+        <activity android:name=".ServiceActivity" >
+        </activity>
     </application>
 
 </manifest>

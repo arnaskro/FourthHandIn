@@ -21,7 +21,7 @@ public class Widget_class extends AppWidgetProvider {
 //            timetext = currentWidgetId + ")   " + timetext;
 
             SharedPreferences prefs = context.getSharedPreferences(Intro.CAMERA_PREFS, Intro.MODE_PRIVATE);
-            String pictureTime = "Last picture taken: " + prefs.getString(Intro.LAST_PICTURE_TIME, "");
+            String pictureTime = "Last picture taken: " + prefs.getString(Intro.LAST_PICTURE_TIME, "--:--:--");
             Intent myIntent = new Intent(context, Intro.class);
             PendingIntent pending = PendingIntent.getActivity(context, 0, myIntent, 0);
 
